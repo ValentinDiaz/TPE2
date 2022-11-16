@@ -33,7 +33,7 @@ class discoApiController {
             }
         }
         else{
-            return $this->view->response("realizar la peticion correcta",400 );
+            return $this->view->response("realizar la peticion correcta",400);
         }  
 
 
@@ -94,9 +94,9 @@ class discoApiController {
     private function getPrior(){
         if(isset($_GET["order"])){
              $tempOrder= strtoupper($_GET["order"]);
-                if($tempOrder == "ASC"|| $tempOrder == "DESC" );
+                if($tempOrder == "ASC"|| $tempOrder == "DESC" ){
                     return $tempOrder;
-                
+                }    
                 return null;    
         }
         return 'ASC';
@@ -113,4 +113,7 @@ class discoApiController {
         }
             return "id";
     }
+
+
+    
 }      

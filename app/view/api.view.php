@@ -16,6 +16,8 @@
           200 => "OK",
           201 => "Created",
           400 => "Bad request",
+          401=>  "unauthorized",
+          403=>  "forbidden",
           404 => "Not found",
           500 => "Internal Server Error"
         );
