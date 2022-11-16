@@ -82,12 +82,17 @@ class discoApiController {
             $discos = $this->getData(); 
             $disco = $this->model->getDisco($id);
             if ($disco) {
+                if (empty($disco->titulo) || empty($disco->anio) || empty($disco->artista) || empty($disco->id_genero)) {
+                    $this->view->response("Complete los datos", 400);
+                }
+                else{  
                     $this->model->editDisco( $discos->titulo, $discos->anio, $discos->artista, $discos->id_genero,$id);
-                    $this->view->response("se realizo el cambio", 201);       
+                    $this->view->response("se realizo el cambio", 201);   
+                }      
             }
              else{
                     $this->view->response("La tarea con el id=$id no existe", 404);
-             }
+            }
     }
 
 
